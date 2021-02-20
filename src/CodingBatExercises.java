@@ -27,10 +27,37 @@ public class CodingBatExercises {
 //        }
     }
 
+    //    Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
+//
+//
+//    backAround("cat") → "tcatt"
+//    backAround("Hello") → "oHelloo"
+//    backAround("a") → "aaa"
+    public String backAround(String str) {
+        String last = str.substring(str.length() - 1);
+        return last + str + last;
+    }
 
+    // Given a string, return true if the string starts with "hi" and false otherwise.
+    public boolean startHi(String str) {
+        if(str.length() < 2) {
+            return false;
+        }
+        String s = str.substring(0,2);
+        if (s.equals("hi")) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
-
-
+    // We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
+    public boolean hasTeen(int a, int b, int c) {
+        return (a>=13 && a<=19) ||
+                (b>=13 && b<=19) ||
+                (c>=13 && c<=19);
+    }
 
 
 }
