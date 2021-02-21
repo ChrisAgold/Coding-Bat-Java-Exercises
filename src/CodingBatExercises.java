@@ -29,7 +29,6 @@ public class CodingBatExercises {
 
     //    Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
 //
-//
 //    backAround("cat") → "tcatt"
 //    backAround("Hello") → "oHelloo"
 //    backAround("a") → "aaa"
@@ -40,24 +39,36 @@ public class CodingBatExercises {
 
     // Given a string, return true if the string starts with "hi" and false otherwise.
     public boolean startHi(String str) {
-        if(str.length() < 2) {
+        if (str.length() < 2) {
             return false;
         }
-        String s = str.substring(0,2);
+        String s = str.substring(0, 2);
         if (s.equals("hi")) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     // We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
     public boolean hasTeen(int a, int b, int c) {
-        return (a>=13 && a<=19) ||
-                (b>=13 && b<=19) ||
-                (c>=13 && c<=19);
+        return (a >= 13 && a <= 19) ||
+                (b >= 13 && b <= 19) ||
+                (c >= 13 && c <= 19);
     }
+
+    // mixStart
+    // Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
+    public boolean mixStart(String str) {
+        if(str.length() < 3) {
+            return false;
+        }
+        String two = str.substring(1, 3);
+        return(two.equals("ix"));
+    }
+
+    // close10
+    // Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
 
 
 }
