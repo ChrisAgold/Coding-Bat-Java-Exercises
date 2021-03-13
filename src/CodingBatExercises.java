@@ -60,18 +60,46 @@ public class CodingBatExercises {
     // mixStart
     // Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
     public boolean mixStart(String str) {
-        if(str.length() < 3) {
+        if (str.length() < 3) {
             return false;
         }
         String two = str.substring(1, 3);
-        return(two.equals("ix"));
+        return (two.equals("ix"));
     }
 
     // lastDigit
     // Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
     public boolean lastDigit(int a, int b) {
         // True if the last digits are the same
-        return(a % 10 == b % 10);
+        return (a % 10 == b % 10);
     }
 
+    // Logic-1 fizzString
+    // Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged. (See also: FizzBuzz Code)
+    //fizzString("fig") → "Fizz"
+    //fizzString("dib") → "Buzz"
+    //fizzString("fib") → "FizzBuzz"
+    public String fizzString(String str) {
+        boolean fizz = str.charAt(0) == 'f';
+        boolean buzz = str.charAt(str.length() - 1) == 'b';
+        if (fizz && buzz) return "FizzBuzz";
+        if (fizz) return "Fizz";
+        if (buzz) return "Buzz";
+        return str;
+    }
+
+    // String-2 countCode
+// Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+//countCode("aaacodebbb") → 1
+//countCode("codexxcode") → 2
+//countCode("cozexxcope") → 2
+    public int countCode(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (str.substring(i, i + 2).equals("co") && str.substring(i + 3, i + 4).equals("e")) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
